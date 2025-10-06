@@ -233,3 +233,4 @@ module.exports = class deltaText {
     });
   }
 };
+
