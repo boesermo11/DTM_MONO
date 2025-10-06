@@ -1,0 +1,212 @@
+/* ---------------------------
+   Primary Custom Font
+--------------------------- */
+@font-face {
+  font-family: "DeterminationMonoWeb";
+  src: url("https://raw.githubusercontent.com/boesermo11/DTM_MONO/main/DeterminationMonoWebRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Fallback font */
+@font-face {
+  font-family: "NotoSansFallback";
+  src: url("https://fonts.gstatic.com/s/notosans/v27/o-0IIpQlx3QUlC5A4PNb4j5Ba_2c7A.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ---------------------------
+   Global font
+--------------------------- */
+* {
+  font-family: "DeterminationMonoWeb", "NotoSansFallback", monospace !important;
+  font-weight: normal !important;
+}
+
+/* ---------------------------
+   Italics styling
+--------------------------- */
+i, em {
+  font-style: normal !important;
+  color: #FFFF00 !important;
+}
+
+/* ---------------------------
+   Soul traits
+--------------------------- */
+.soul-determination { color: #FF0000 !important; }
+.soul-integrity     { color: #0000FF !important; }
+.soul-patience      { color: #14A9FF !important; }
+.soul-perseverance  { color: #FF00FF !important; }
+.soul-bravery       { color: #FFA040 !important; }
+.soul-justice       { color: #FFFF00 !important; }
+.soul-kindness      { color: #00FF00 !important; }
+
+/* ---------------------------
+   Bottom bar styling
+--------------------------- */
+footer {
+  background-color: #000 !important;
+  border-top: 4px solid #fff !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+/* Input container */
+div[class*="scrollableContainer__"] {
+  background-color: #000 !important;
+  border: 4px solid #fff !important;
+  border-radius: 0 !important;
+  padding: 2px !important;
+  box-sizing: border-box !important;
+}
+
+/* Text box */
+div[role="textbox"] {
+  background-color: transparent !important;
+  color: #fff !important;
+  padding: 4px !important;
+  border-radius: 0 !important;
+  font-family: "DeterminationMonoWeb", "NotoSansFallback", monospace !important;
+}
+
+/* ---------------------------
+   Bottom bar buttons
+--------------------------- */
+div[class*="buttons__"] button,
+button[class*="buttonWrapper__"],
+button[class*="emojiButton__"],
+button[class*="stickerButton__"],
+button[class*="attachButton__"],
+button[class*="expressionPickerButton__"],
+div[class*="iconWrapper-"] {
+  background-color: #000 !important;
+  border: 2px solid #fff !important;
+  border-radius: 0 !important;
+  color: #FFFF00 !important;
+  padding: 4px !important;
+  margin-left: 4px !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  box-sizing: border-box !important;
+}
+
+/* Button hover */
+div[class*="buttons__"] button:hover,
+button[class*="buttonWrapper__"]:hover,
+button[class*="emojiButton__"]:hover,
+button[class*="stickerButton__"]:hover,
+button[class*="attachButton__"]:hover,
+button[class*="expressionPickerButton__"]:hover,
+div[class*="iconWrapper-"]:hover {
+  background-color: #222 !important;
+  border-color: #FFFF00 !important;
+  color: #FFFFAA !important;
+}
+
+/* ---------------------------
+   Send button ASCII replacement
+--------------------------- */
+button[class*="sendButton-"] svg {
+  display: none !important; /* hide default arrow */
+}
+
+button[class*="sendButton-"]::after {
+  content: ">"; /* ASCII arrow */
+  font-family: "DeterminationMonoWeb", monospace !important;
+  color: #FFFF00 !important;
+  font-size: 16px;
+  display: inline-block;
+  transform: translateY(1px);
+}
+
+/* ---------------------------
+   Toggle switches in settings (checkbox & div)
+--------------------------- */
+/* Hide original handle for checkbox toggles */
+input[type="checkbox"] + div::before {
+  display: none !important;
+}
+
+/* Checkbox track */
+input[type="checkbox"] + div {
+  border-radius: 0 !important;           
+  background-color: #FF0000 !important;  
+  position: relative;
+  width: 40px; 
+  height: 24px;
+}
+
+/* Checkbox square Y/N */
+input[type="checkbox"] + div::after {
+  content: "N";
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  color: #FF0000;
+  text-align: center;
+  line-height: 16px;
+  font-weight: bold;
+  border-radius: 0;
+  font-family: "DeterminationMonoWeb", monospace;
+  transition: all 0.2s ease;
+}
+
+/* Checkbox checked/on state */
+input[type="checkbox"]:checked + div {
+  background-color: #FFFF00 !important;
+}
+
+input[type="checkbox"]:checked + div::after {
+  content: "Y";
+  left: 20px;
+  color: #FFFF00;
+}
+
+/* Generic div-based toggle switches */
+div[class*="switch-"] {
+  border-radius: 0 !important;
+  background-color: #FF0000 !important;
+  position: relative;
+  width: 40px;
+  height: 24px;
+}
+
+/* Hide inner handle */
+div[class*="switch-"] > div {
+  display: none !important;
+}
+
+/* Square Y/N for div switches */
+div[class*="switch-"]::after {
+  content: "N";
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  color: #FF0000;
+  text-align: center;
+  line-height: 16px;
+  font-weight: bold;
+  border-radius: 0;
+  font-family: "DeterminationMonoWeb", monospace;
+  transition: all 0.2s ease;
+}
+
+/* Div toggle on state */
+div[class*="switch-"][aria-checked="true"] {
+  background-color: #FFFF00 !important;
+}
+
+div[class*="switch-"][aria-checked="true"]::after {
+  content: "Y";
+  left: 20px;
+  color: #FFFF00;
+}
